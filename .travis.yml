@@ -16,7 +16,7 @@ cache:
 
 before_install:
     - sudo add-apt-repository ppa:stesie/libv8 -y
-    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
+    - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     - sudo apt-get update -yqq
     - sudo apt-get install -y libv8-$(V8VER)-dev
 
