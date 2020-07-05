@@ -1,3 +1,4 @@
+sudo: required
 dist: trusty
 language: php
 env:
@@ -14,9 +15,9 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
-    - add-apt-repository ppa:stesie/libv8
-    - apt-get update -yqq
-    - apt-get install -y libv8-$(V8VER)-dev
+    - sudo add-apt-repository ppa:stesie/libv8
+    - sudo apt-get update -yqq
+    - sudo apt-get install -y libv8-$(V8VER)-dev
 
 before_script:
   - git clone https://github.com/phpv8/v8js.git
