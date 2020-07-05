@@ -11,10 +11,7 @@ cache:
   directories:
     - $HOME/.composer/cache
 
-matrix:
-  include:
-    - php: 7.2
-      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
+before_install: echo "extension = v8js.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 before_script:
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
