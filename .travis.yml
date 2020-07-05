@@ -1,5 +1,7 @@
 dist: trusty
 language: php
+env:
+    - V8VER=7.5
 
 php:
   - 7.2
@@ -11,8 +13,14 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+before_install:
+    - add-apt-repository ppa:stesie/libv8
+    - apt-get update -yqq
+    - apt-get install -y libv8-$(V8VER)-dev
+
 before_script:
-  - echo '' | pecl install v8js
+  - git clone https://github.com/phpv8/v8js.git
+  - cd v8js && phpize && ./configure LDFLAGS="-lstdc++" --with-v8js=/opt/libv8-$(V8VER) && $(MAKE) -j3 && $(MAKE) install install && cd ..
   - echo "extension = v8js.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
