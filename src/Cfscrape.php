@@ -13,6 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Cfscrape
 {
+    // phpcs:disable
     protected $userAgents = [
         "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36",
         "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36",
@@ -45,6 +46,7 @@ class Cfscrape
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36",
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36",
     ];
+    // phpcs:enable
 
     protected $headers;
 
@@ -420,6 +422,7 @@ EOF;
             'Connection'                => 'keep-alive',
             'Upgrade-Insecure-Requests' => '1',
             'User-Agent'                => $this->getDefaultUserAgent(),
+            // phpcs:ignore
             'Accept'                    => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
             'Accept-Language'           => 'en-US,en;q=0.9',
             'Accept-Encoding'           => 'gzip, deflate',
