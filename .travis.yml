@@ -15,7 +15,7 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
-    - echo "deb http://ppa.launchpad.net/stesie/libv8/ubuntu bionic main" > /etc/apt/sources.list.d/stesie-libv8.list \
+    - sudo echo "deb http://ppa.launchpad.net/stesie/libv8/ubuntu bionic main" > /etc/apt/sources.list.d/stesie-libv8.list
     - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1A10946ED858A0DF
     - sudo apt-get update -yqq
     - sudo apt-get install -y libv8-$(V8VER)-dev
