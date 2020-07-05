@@ -247,7 +247,8 @@ class Cfscrape
         foreach (['jschl_vc', 'pass'] as $item) {
             if (!isset($option[$k][$item])) {
                 throw new \InvalidArgumentException(sprintf(
-                    '%s is missing from challenge form', $item
+                    '%s is missing from challenge form',
+                    $item
                 ));
             }
         }
@@ -301,7 +302,6 @@ class Cfscrape
     protected function solveChallenge(string $body, string $domain)
     {
         try {
-
             $challenge = $this->substr($body, 'setTimeout(function(){', 'f.action += location.hash;');
             $challenge = str_replace('setInterval(function(){}, 100),', "", $challenge);
 
