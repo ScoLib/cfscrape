@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: xenial
 language: php
 env:
     - V8VER=7.5
@@ -16,9 +16,6 @@ cache:
 
 before_install:
     - sudo add-apt-repository ppa:stesie/libv8 -y
-    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
-    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
-    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57
     - sudo apt-get update -yqq
     - sudo apt-get install -y libv8-${V8VER}-dev
 
