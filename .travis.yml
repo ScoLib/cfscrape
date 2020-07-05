@@ -12,7 +12,7 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
-  - sudo pecl install v8js
+  - pecl install v8js
   - echo "extension = v8js.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 

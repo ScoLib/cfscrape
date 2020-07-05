@@ -61,5 +61,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-downloads]: https://img.shields.io/packagist/dt/cfscrape/cfscrape.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/cfscrape/cfscrape
-[link-travis]: https://travis-ci.org/cfscrape/cfscrape
+[link-travis]: https://travis-ci.com/cfscrape/cfscrape
 [link-downloads]: https://packagist.org/packages/cfscrape/cfscrape
