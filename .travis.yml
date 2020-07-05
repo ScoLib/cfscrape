@@ -15,7 +15,7 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
-    - sudo add-apt-repository ppa:stesie/libv8
+    - sudo add-apt-repository ppa:stesie/libv8 -y
     - sudo apt-get update -yqq
     - sudo apt-get install -y libv8-$(V8VER)-dev
 
