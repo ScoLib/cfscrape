@@ -21,7 +21,7 @@ before_install:
 
 before_script:
   - git clone https://github.com/phpv8/v8js.git
-  - cd v8js && phpize && ./configure LDFLAGS="-lstdc++" --with-v8js=/opt/libv8-${V8VER} && $(MAKE) -j$(nproc) && $(MAKE) install install && cd ..
+  - cd v8js && phpize && ./configure LDFLAGS="-lstdc++" --with-v8js=/opt/libv8-${V8VER} && make -j$(nproc) && make install && cd ..
   - echo "extension = v8js.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
